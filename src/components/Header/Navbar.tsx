@@ -11,10 +11,10 @@ function Navbar() {
   ];
 
   return (
-    <nav className="flex justify-end h-[56px]  bg-amber-200">
-      <ul className="flex space-x-4">
+    <nav className="flex justify-end h-[56px] items-center">
+      <ul className="flex space-x-5">
         {navlinks.map((navlink) => (
-          <li key={navlink.link}>
+          <li key={navlink.link} className="text-lg  text-gray-700">
             <Link href={navlink.link}>{navlink.name}</Link>
           </li>
         ))}

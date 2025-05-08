@@ -4,3 +4,11 @@
 body {
   font-family: "Vazir", sans-serif;
 }
+
+.btnblue {
+  background-color: #1a73e9;
+  color: #f7f7f7;
+}
+.btnnotblue {
+  background-color: #f7f7f7;
+}

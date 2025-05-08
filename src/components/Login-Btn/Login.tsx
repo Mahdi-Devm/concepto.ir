@@ -1,7 +1,12 @@
 import React from "react";
+import { CiLogin } from "react-icons/ci";
 
 function LoginBtn() {
-  return <div className="w-[184px] h-[48px] bg-amber-200">LoginBtn</div>;
+  return (
+    <button className="w-[184px] h-[48px] border-1 flex justify-center items-center">
+      ورود/ثبت نام <CiLogin className="text-2xl" />
+    </button>
+  );
 }
 
 export default LoginBtn;
