@@ -14,19 +14,19 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Close menu when clicking outside or pressing escape
   useEffect(() => {
-    const handleEscape = (e) => {
+    const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsMenuOpen(false);
     };
 
-    const handleClickOutside = (e) => {
+    const handleClickOutside = (e: MouseEvent) => {
       const menuContainer = document.getElementById("mobile-menu");
+      const target = e.target as HTMLElement;
       if (
         isMenuOpen &&
         menuContainer &&
-        !menuContainer.contains(e.target) &&
-        !e.target.closest('button[aria-label="toggle-menu"]')
+        !menuContainer.contains(e.target as Node) &&
+        !target.closest('button[aria-label="toggle-menu"]')
       ) {
         setIsMenuOpen(false);
       }
@@ -55,7 +55,6 @@ function Header() {
 
   return (
     <header className="max-w-[1224px] mx-auto mt-3 px-4">
-      {/* Desktop Header */}
       <section className="hidden md:flex justify-between h-[48px] items-center">
         <div className="flex items-center gap-2">
           <LoginBtn />
@@ -70,42 +69,38 @@ function Header() {
         </div>
       </section>
 
-      {/* Mobile Header */}
       <section className="flex md:hidden justify-between items-center h-[48px]">
+        <div className="flex items-center gap-2">
+          <div className="flex flex-row gap-2">
+            <button className="btnblue w-[40px] h-[40px] border-1 flex items-center justify-center rounded-md">
+              <AiFillThunderbolt />
+            </button>
+            <LoginBtn mobileView={true} />
+          </div>
+        </div>
+        <div className="flex items-center">
+          <Logo />
+        </div>
+
         <button
           onClick={toggleMenu}
-          className="text-2xl focus:outline-none"
+          className="text-2xl focus:outline-none bg-stone-300 p-2 rounded-xl"
           aria-label="toggle-menu"
         >
           <HiMenu />
         </button>
-        <div className="flex items-center gap-2">
-          <div className="flex items-center">
-            <Logo />
-          </div>
-          <div className="flex flex-row gap-2">
-            <button className="btnblue h-[40px] border-1 flex items-center justify-center rounded-md px-2">
-              <AiFillThunderbolt />
-            </button>
-            <div className="scale-90">
-              <LoginBtn />
-            </div>
-          </div>
-        </div>
       </section>
 
-      {/* Mobile Search Bar */}
       <div className="md:hidden mt-3">
         <Searchbar />
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div
           id="mobile-menu"
           className="md:hidden fixed inset-0 bg-white z-50 pt-4 px-4 overflow-y-auto"
         >
-          <div className="flex justify-end mb-4">
+          <div className="flex justify-start mb-4">
             <button
               onClick={toggleMenu}
               className="text-2xl focus:outline-none"
@@ -115,7 +110,6 @@ function Header() {
             </button>
           </div>
           <div className="flex flex-col space-y-6">
-            {/* Navigation Links */}
             <nav className="border-b pb-6">
               <ul className="flex flex-col space-y-4">
                 {navlinks.map((navlink) => (
@@ -137,7 +131,6 @@ function Header() {
         </div>
       )}
 
-      {/* Desktop Navbar */}
       <section className="hidden md:block">
         <Navbar />
       </section>
