@@ -7,7 +7,7 @@ const Logo = () => (
       alt="Logo"
       width={200}
       height={50}
-      className="w-auto h-auto sm:w-1/2 md:w-1/3 lg:w-1/6"
+      className="w-full h-auto "
     />
   </div>
 );
