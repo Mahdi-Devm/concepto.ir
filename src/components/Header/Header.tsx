@@ -54,7 +54,7 @@ function Header() {
   };
 
   return (
-    <header className="w-full sm:max-w-[1224px] mx-auto mt-3 px-4 mx-auto mt-3 px-4">
+    <header className="w-full sm:max-w-[1224px] mx-auto mt-3 px-4 ">
       <section className="hidden md:flex justify-between h-[48px] items-center">
         <div className="flex items-center gap-2">
           <LoginBtn />
