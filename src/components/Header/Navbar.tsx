@@ -6,11 +6,11 @@ import React from "react";
 function Navbar() {
   const pathname = usePathname();
   const navlinks = [
-    { link: "/", name: "خانه" },
     { link: "/about", name: "درباره ما" },
     { link: "/contact", name: "تماس با ما" },
     { link: "/job", name: "فرصت های شغلی" },
     { link: "/company", name: "شرکت ها" },
+    { link: "/", name: "خانه" },
   ];
 
   return (
