@@ -4,11 +4,26 @@
 body {
   font-family: "Vazir", sans-serif;
 }
-
+/* btnblue */
 .btnblue {
   background-color: #1a73e9;
   color: #f7f7f7;
+  transition: all 0.3s ease-in;
 }
+.btnblue:hover {
+  background: #f7f7f7;
+  color: #1a73e9;
+  cursor: pointer;
+}
+/* btnnotblue */
 .btnnotblue {
   background-color: #f7f7f7;
+  color: #1a73e9;
+  transition: all 0.3s ease-out;
+  border-radius: 5px;
+}
+.btnnotblue:hover {
+  background: #1a73e9;
+  color: #f7f7f7;
+  cursor: pointer;
 }
