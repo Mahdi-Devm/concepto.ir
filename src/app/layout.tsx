@@ -17,9 +17,7 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className="antialiased min-h-screen grid grid-rows-[auto_1fr_auto]">
         <Header />
-        <main className="max-w-[1224px] mx-auto w-full bg-amber-200">
-          {children}
-        </main>
+        <main className="max-w-[1224px] mx-auto w-full ">{children}</main>
         <Footer />
       </body>
     </html>
