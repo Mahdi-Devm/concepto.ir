@@ -2,12 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-
-const images = [
-  "/mainpage/Imagemain1.png",
-  "/mainpage/Imagemain3.png",
-  "/mainpage/Imagemain2.png",
-];
+import { Introducingcompaniesimages } from "@/context/Introducingcompaniesimages";
 
 function Introducingcompanies() {
   return (
@@ -19,7 +14,7 @@ function Introducingcompanies() {
         viewport={{ once: true }}
       >
         <Image
-          src={images[1]}
+          src={Introducingcompaniesimages[1]}
           alt="Main Company"
           width={1000}
           height={400}
@@ -35,7 +30,7 @@ function Introducingcompanies() {
         className="absolute top-0 right-0 z-10"
       >
         <Image
-          src={images[2]}
+          src={Introducingcompaniesimages[2]}
           alt="Top Right"
           width={300}
           height={200}
@@ -51,7 +46,7 @@ function Introducingcompanies() {
         className="absolute top-90 left-0 z-10"
       >
         <Image
-          src={images[0]}
+          src={Introducingcompaniesimages[0]}
           alt="Bottom Left"
           width={400}
           height={200}
