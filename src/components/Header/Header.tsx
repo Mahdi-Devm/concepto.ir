@@ -134,6 +134,7 @@ function Header() {
       <section className="hidden md:block">
         <Navbar />
       </section>
+      <hr className="text-stone-200 mb-5" />
     </header>
   );
 }
