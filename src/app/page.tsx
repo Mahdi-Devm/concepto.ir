@@ -1,11 +1,19 @@
 import React from "react";
 import Head from "next/head";
-
 import Headermainpagetext from "@/components/main/Headermainpagetext";
 import Introducingcompanies from "@/components/main/Introducingcompanies";
 import Numbercontent from "@/components/main/Numbercontent";
-
-function Home() {
+import MainCommunication from "@/components/main/MainCommunication";
+import Category from "@/components/main/Category";
+async function getData() {
+  return {
+    investors: 200,
+    activeCompanies: 120,
+    investmentAmount: 5000,
+  };
+}
+async function Home() {
+  const data = await getData();
   return (
     <>
       <Head>
@@ -15,7 +23,9 @@ function Home() {
       </Head>
       <Headermainpagetext />
       <Introducingcompanies />
-      <Numbercontent />
+      <Numbercontent data={data} />
+      <MainCommunication />
+      <Category />
     </>
   );
 }
