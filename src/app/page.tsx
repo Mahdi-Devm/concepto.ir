@@ -5,6 +5,7 @@ import Introducingcompanies from "@/components/main/Introducingcompanies";
 import Numbercontent from "@/components/main/Numbercontent";
 import MainCommunication from "@/components/main/MainCommunication";
 import Category from "@/components/main/Category";
+import Companies from "@/components/main/Companies";
 async function getData() {
   return {
     investors: 200,
@@ -26,6 +27,7 @@ async function Home() {
       <Numbercontent data={data} />
       <MainCommunication />
       <Category />
+      <Companies />
     </>
   );
 }
