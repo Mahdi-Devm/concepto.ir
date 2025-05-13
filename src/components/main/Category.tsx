@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import TiltCard from "./VanillaTilt ";
+import TiltCard from "@/features/stylingmainpage/VanillaTilt ";
 
 const categories = [
   { src: "/mainpage/items/Button.png", label: "دکمه‌ها" },

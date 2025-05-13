@@ -6,6 +6,10 @@ import Numbercontent from "@/components/main/Numbercontent";
 import MainCommunication from "@/components/main/MainCommunication";
 import Category from "@/components/main/Category";
 import Companies from "@/components/main/Companies";
+import Jobopportunities from "@/components/main/Jobopportunities";
+import CompaniesSEO from "@/features/seo/CompaniesSEO";
+import JobOpportunitiesSEO from "@/features/seo/JobOpportunitiesSEO";
+
 async function getData() {
   return {
     investors: 200,
@@ -13,6 +17,7 @@ async function getData() {
     investmentAmount: 5000,
   };
 }
+
 async function Home() {
   const data = await getData();
   return (
@@ -22,12 +27,16 @@ async function Home() {
         <meta name="description" content="خوش آمدید به صفحه اصلی سایت من!" />
         <meta name="keywords" content="سایت من, صفحه اصلی, خوش آمدید" />
       </Head>
+
       <Headermainpagetext />
       <Introducingcompanies />
       <Numbercontent data={data} />
       <MainCommunication />
       <Category />
       <Companies />
+      <CompaniesSEO />
+      <Jobopportunities />
+      <JobOpportunitiesSEO />
     </>
   );
 }
