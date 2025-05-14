@@ -17,10 +17,10 @@ function Contact() {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.7638023813956!2d51.3889738152627!3d35.68919758019427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e017daf70e5a9%3A0x4bfb586e2e1cfde9!2sTehran%2C%20Iran!5e0!3m2!1sen!2sus!4v1626430993830!5m2!1sen!2sus"
             width="100%"
             height="100%"
-            allowFullScreen=""
+            allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          />
         </div>
 
         {/* فرم تماس */}
