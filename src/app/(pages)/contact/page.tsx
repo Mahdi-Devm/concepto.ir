@@ -74,7 +74,7 @@ function Contact() {
               </label>
 
               <textarea
-                rows="5"
+                rows={5}
                 className="border pl-10 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="پیام خود را اینجا بنویسید..."
               ></textarea>
