@@ -9,6 +9,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import Navbar from "./Navbar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -96,9 +97,13 @@ function Header() {
       </div>
 
       {isMenuOpen && (
-        <div
+        <motion.div
           id="mobile-menu"
           className="md:hidden fixed inset-0 bg-white z-50 pt-4 px-4 overflow-y-auto"
+          initial={{ opacity: 0, x: "100%" }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: "100%" }}
+          transition={{ duration: 0.5 }}
         >
           <div className="flex justify-start mb-4">
             <button
@@ -128,7 +133,7 @@ function Header() {
               </ul>
             </nav>
           </div>
-        </div>
+        </motion.div>
       )}
 
       <section className="hidden md:block">
