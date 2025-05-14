@@ -6,7 +6,8 @@ import { Introducingcompaniesimages } from "@/context/Introducingcompaniesimages
 
 function Introducingcompanies() {
   return (
-    <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[300px] md:h-[600px] flex items-center justify-center overflow-hidden">
+      {/* تصویر اصلی - فقط در دسکتاپ */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -22,35 +23,37 @@ function Introducingcompanies() {
         />
       </motion.div>
 
+      {/* تصویر بالا راست - همیشه دیده بشه */}
       <motion.div
         initial={{ opacity: 0, x: 100, y: -100 }}
         whileInView={{ opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
         viewport={{ once: true }}
-        className="absolute top-0 right-0 z-10"
+        className="absolute top-0 right-0 z-10 hidden md:block"
       >
         <Image
           src={Introducingcompaniesimages[2]}
           alt="Top Right"
           width={300}
           height={200}
-          className="rounded-xl "
+          className="rounded-xl"
         />
       </motion.div>
 
+      {/* تصویر پایین چپ - فقط در دسکتاپ */}
       <motion.div
         initial={{ opacity: 0, x: -100, y: 100 }}
         whileInView={{ opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: true }}
-        className="absolute top-90 left-0 z-10"
+        className="absolute top-90 left-0 z-10 hidden md:block"
       >
         <Image
           src={Introducingcompaniesimages[0]}
           alt="Bottom Left"
           width={400}
           height={200}
-          className="rounded-xl "
+          className="rounded-xl"
         />
       </motion.div>
     </section>
