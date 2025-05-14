@@ -1,7 +1,18 @@
 "use client";
 
 import React, { useEffect, useRef, ReactNode } from "react";
-import VanillaTilt, { VanillaTiltOptions } from "vanilla-tilt";
+import VanillaTilt from "vanilla-tilt";
+
+interface VanillaTiltOptions {
+  max?: number;
+  speed?: number;
+  glare?: boolean;
+  "max-glare"?: number;
+  gyroscope?: boolean;
+  scale?: number;
+  perspective?: number;
+  [key: string]: any;
+}
 
 interface TiltCardProps {
   children: ReactNode;
@@ -14,7 +25,7 @@ const TiltCard: React.FC<TiltCardProps> = ({
   className = "",
   options = {},
 }) => {
-  const tiltRef = useRef<HTMLDivElement | null>(null);
+  const tiltRef = useRef<HTMLDivElement & { vanillaTilt?: any }>(null);
 
   useEffect(() => {
     if (tiltRef.current) {

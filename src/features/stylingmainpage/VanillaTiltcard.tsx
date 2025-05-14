@@ -1,7 +1,18 @@
 "use client";
 
 import React, { useEffect, useRef, ReactNode } from "react";
-import VanillaTilt, { VanillaTiltOptions } from "vanilla-tilt";
+import VanillaTilt from "vanilla-tilt";
+
+interface VanillaTiltOptions {
+  max?: number;
+  speed?: number;
+  glare?: boolean;
+  "max-glare"?: number;
+  gyroscope?: boolean;
+  scale?: number;
+  perspective?: number;
+  [key: string]: any;
+}
 
 interface VanillaTiltcardProps {
   children: ReactNode;
@@ -14,19 +25,18 @@ const VanillaTiltcard: React.FC<VanillaTiltcardProps> = ({
   className = "",
   options = {},
 }) => {
-  const tiltRef = useRef<HTMLDivElement | null>(null);
+  const tiltRef = useRef<(HTMLDivElement & { vanillaTilt?: any }) | null>(null);
 
   useEffect(() => {
     if (tiltRef.current) {
       VanillaTilt.init(tiltRef.current, {
-        max: 10, // حساسیت مناسب برای کاردهای بزرگ
-        speed: 600, // سرعت انیمیشن بیشتر برای حرکت نرم
+        max: 10,
+        speed: 600,
         glare: true,
-        "max-glare": 0.25, // شدت تابش نور متعادل‌تر
+        "max-glare": 0.25,
         gyroscope: false,
-        scale: 1.03, // کمی بزرگ‌تر شدن کارت در هنگام حرکت
-        perspective: 1000, // ایجاد عمق بیشتر برای احساس حرکت طبیعی
-        "ease-in-out": true, // نرم‌تر کردن انیمیشن
+        scale: 1.03,
+        perspective: 1000,
         ...options,
       });
     }
