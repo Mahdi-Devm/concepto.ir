@@ -12,7 +12,7 @@ function Login() {
           width={300}
           height={150}
           src="/login/Container(1).png"
-          alt="Logo 1"
+          alt="Logo 2"
           className="w-4/5 max-w-[450px] h-auto"
         />
       </div>
