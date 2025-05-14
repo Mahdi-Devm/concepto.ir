@@ -11,7 +11,13 @@ interface VanillaTiltOptions {
   gyroscope?: boolean;
   scale?: number;
   perspective?: number;
-  [key: string]: any;
+  [key: string]: unknown;
+}
+
+interface TiltElement extends HTMLDivElement {
+  vanillaTilt?: {
+    destroy: () => void;
+  };
 }
 
 interface TiltCardProps {
@@ -25,11 +31,12 @@ const TiltCard: React.FC<TiltCardProps> = ({
   className = "",
   options = {},
 }) => {
-  const tiltRef = useRef<HTMLDivElement & { vanillaTilt?: any }>(null);
+  const tiltRef = useRef<TiltElement | null>(null);
 
   useEffect(() => {
-    if (tiltRef.current) {
-      VanillaTilt.init(tiltRef.current, {
+    const node = tiltRef.current;
+    if (node) {
+      VanillaTilt.init(node, {
         max: 15,
         speed: 400,
         glare: true,
@@ -39,7 +46,7 @@ const TiltCard: React.FC<TiltCardProps> = ({
     }
 
     return () => {
-      tiltRef.current?.vanillaTilt?.destroy?.();
+      node?.vanillaTilt?.destroy?.();
     };
   }, [options]);
 
