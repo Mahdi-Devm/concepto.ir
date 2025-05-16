@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.76.1",
+    "@tanstack/react-query-next-experimental": "^5.76.1",
     "framer-motion": "^12.11.3",
     "next": "15.3.2",
     "nprogress": "^0.2.0",
