@@ -5,11 +5,11 @@ import { usePathname } from "next/navigation";
 function Nabarsearch() {
   const pathname = usePathname();
   const navlinks = [
-    { link: "stored", name: "ذخیره شده ها" },
-    { link: "companies", name: "شرکت " },
-    { link: "callme", name: "راه های تماسی" },
-    { link: "investor", name: "سرمایه گذاری " },
-    { link: "events", name: "رویداد " },
+    { link: "/search/stored", name: "ذخیره شده ها" },
+    { link: "/search", name: "شرکت " },
+    { link: "/search/callme", name: "راه های تماسی" },
+    { link: "/search/investor", name: "سرمایه گذاری " },
+    { link: "/search/events", name: "رویداد " },
   ];
 
   return (
