@@ -10,23 +10,16 @@ function SuggestedCompanies() {
         <div className="flex w-full items-center overflow-hidden font-[IRANSansX,-apple-system,Roboto,Helvetica,sans-serif] justify-between max-w-full">
           <div className="items-center border-b border-[#CBCED7] self-stretch flex min-w-[240px] mt-auto mb-auto w-full px-3 sm:px-5 py-4 sm:py-5 gap-2 sm:gap-4 overflow-hidden justify-start flex-wrap flex-1 flex-shrink flex-basis-0 bg-white max-w-full">
             <div className="rounded-xl self-stretch flex mt-auto mb-auto min-h-[32px] px-2 items-center gap-1 overflow-hidden text-sm text-[#0D6EFD] font-medium capitalize leading-[25px] justify-center hover:bg-blue-50 transition-colors cursor-pointer">
+              <AiOutlineArrowLeft className="w-5 h-5 self-stretch mt-auto mb-auto flex-shrink-0" />
               <div className="text-[#0D6EFD] self-stretch mt-auto mb-auto">
                 مشاهده بیشتر
               </div>
-              <AiOutlineArrowLeft className="w-5 h-5 self-stretch mt-auto mb-auto flex-shrink-0" />
             </div>
 
             <div className="self-stretch flex min-w-[240px] mt-auto mb-auto py-[1px] items-center gap-2 text-lg sm:text-xl text-[#444859] font-bold whitespace-nowrap leading-[1.4] justify-end flex-wrap flex-1 flex-shrink flex-basis-[16px] max-w-full md:whitespace-normal">
               <div className="text-[#444859] self-stretch mt-auto mb-auto">
                 پیشنهادها
               </div>
-              <Image
-                width={24}
-                height={24}
-                src="/search/icons/suggestion.png"
-                alt="Suggestions icon"
-                className="w-5 h-5 sm:w-6 sm:h-6 object-contain object-center self-stretch mt-auto mb-auto flex-shrink-0"
-              />
             </div>
           </div>
         </div>
