@@ -1,5 +1,19 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const isDev = process.env.NODE_ENV === "development";
+
+const withPWA = require("next-pwa")({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+  disable: false,
+});
+
+const nextConfig = withPWA({
+  reactStrictMode: true,
+  experimental: {
+    appDir: true,
+  },
   images: {
     domains: [
       "upload.wikimedia.org",
@@ -14,6 +28,6 @@ const nextConfig = {
       "divar.ir",
     ],
   },
-};
+});
 
 module.exports = nextConfig;

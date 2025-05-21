@@ -1,0 +1,25 @@
+{
+  "name": "کانسپتو | معرفی استارتاپ‌ها و شرکت‌ها",
+  "short_name": "کانسپتو",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "description": "کانسپتو یک پلتفرم آنلاین برای معرفی استارتاپ‌ها و شرکت‌ها است. در این بستر می‌توانید اطلاعات، فرصت‌های شغلی و اخبار شرکت‌ها را جستجو و دنبال کنید.",
+  "lang": "fa-IR",
+  "icons": [
+    {
+      "src": "/iconlogo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/iconlogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
